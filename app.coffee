@@ -6,18 +6,6 @@
 
     app = angular.module name, [->]
 
-    app.controller 'DemoCtrl', ['$scope', ($scope) ->
-        $scope.chartData =
-            Cake: 12
-            Pizza: 12
-            Burgers: 8
-            'Hot Dogs': 10
-    ]
-
-    app.value name + '.config',
-        piechart:
-            title: 'Pie Chart'
-
     app.service 'GoogleLibLoader', ['$q', '$rootScope', ($q, $rootScope) ->
         @pageLoaded = false
         @toLoad = []
