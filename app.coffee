@@ -81,13 +81,8 @@
                 chart = new google.visualization.PieChart ele[0]
 
                 options = angular.extend config.piechart || {}, options
-
-                if attrs.height?
-                    options.height = parseInt attrs.height, 10
-
-                if attrs.width?
-                    options.width = parseInt attrs.width, 10
-
+                options.height = parseInt attrs.height, 10 if attrs.height?
+                options.width = parseInt attrs.width, 10 if attrs.width?
                 options.title = attrs.title if attrs.title?
 
                 chart.draw dataTable, options
