@@ -1,19 +1,43 @@
 <!DOCTYPE html>
 <html ng-app="chart">
 <head>
-    <title>Test</title>
+    <title>Pie Chart - Angular Charts</title>
 </head>
 
 <body ng-controller="DemoCtrl">
-    Title: <input type="text" ng-model="title" ng-init="title = 'test';"/>
-    <button ng-click="chartData.Cake = chartData.Cake + 1">More Cakes!</button>
+    <p>
+        <label for="title">Title:</label>
+        <input name="title" type="text" ng-model="title" ng-init="title = 'Test';"/>
+    </p>
+
+    <p>
+        <label for="cake">Cake</label>
+        <input name="cake" type="num" ng-model="chartData['Cake']" />
+    </p>
+
+    <p>
+        <label for="pizza">Pizza</label>
+        <input name="pizza" type="num" ng-model="chartData['Pizza']" />
+    </p>
+
+    <p>
+        <label for="burgers">Burgers</label>
+        <input name="burgers" type="num" ng-model="chartData['Burgers']" />
+    </p>
+
+    <p>
+        <label for="hot-dogs">Hot Dogs</label>
+        <input name="hot-dogs" type="num" ng-model="chartData['Hot Dogs']" />
+    </p>
+
     <gc-piechart options="{fontName:'sans-serif'}" height="500" width="500" title="{{title}}" values="chartData"></gc-piechart>
 
 
-    {{chartData | json}}
-
-    {{chartData.Cake}}
-
+    <p>
+        ChartData as JSON:
+        <br />
+        <code ng-bind="chartData | json"></code>
+    </p>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
