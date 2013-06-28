@@ -72,13 +72,12 @@
 
             return dt
 
-
         restrict: 'E'
         link: (scope, ele, attrs) =>
             loader.require('visualization', '1.0', {'packages': ['corechart']}).then ->
-                options = scope.$eval(attrs.options || {})
-                data = scope.$eval(attrs.values || {})
-                dataTable = toDataTable(data)
+                options = scope.$eval attrs.options || {}
+                data = scope.$eval attrs.values || {}
+                dataTable = toDataTable data
                 chart = new google.visualization.PieChart ele[0]
 
                 options = angular.extend config.piechart || {}, options
