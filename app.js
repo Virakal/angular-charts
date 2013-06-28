@@ -125,19 +125,12 @@
               options.title = attrs.title;
             }
             chart.draw(dataTable, options);
-            attrs.$observe('values', function(values) {
-              console.log('observe', values);
-              dataTable = toDataTable(scope.$eval(values));
-              return chart.draw(dataTable, options);
-            });
             scope.$watch((function() {
               return scope.$eval(ele.attr(attrs.$attr.values));
             }), function(values) {
-              return chart.draw(toDataTable(values), options);
+              dataTable = toDataTable(values);
+              return chart.draw(dataTable, options);
             }, true);
-            scope.$watch(attrs.values, (function(values) {
-              return console.log(values);
-            }));
             return attrs.$observe('title', function(title) {
               options.title = title;
               return chart.draw(dataTable, options);

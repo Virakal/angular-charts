@@ -96,7 +96,9 @@
                     (() ->
                         scope.$eval ele.attr attrs.$attr.values
                     ), (values) -> (
-                        chart.draw toDataTable(values), options
+                        dataTable = toDataTable values
+
+                        chart.draw dataTable, options
                     )
                 , true)
 
