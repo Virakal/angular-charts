@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="chart">
+<head>
+    <title>Test</title>
+</head>
+
+<body ng-controller="DemoCtrl">
+    Title: <input type="text" ng-model="title" ng-init="title = 'test';"/>
+    <button ng-click="chartData.Cake = chartData.Cake + 1">More Cakes!</button>
+    <gc-piechart options="{fontName:'sans-serif'}" height="500" width="500" title="{{title}}" values="chartData"></gc-piechart>
+
+
+    {{chartData | json}}
+
+    {{chartData.Cake}}
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script src="https://www.google.com/jsapi"></script>
+    <script src="app.js"></script>
+</body>
+</html>
