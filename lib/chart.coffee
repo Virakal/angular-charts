@@ -103,7 +103,7 @@
                 chart = new google.visualization.PieChart ele[0]
 
                 # Build the options object for the chart
-                options = angular.extend config.piechart || {}, options
+                options = angular.extend {}, config.piechart || {}, options
                 options.height = parseInt attrs.height, 10 if attrs.height?
                 options.width = parseInt attrs.width, 10 if attrs.width?
                 options.title = attrs.title if attrs.title?
