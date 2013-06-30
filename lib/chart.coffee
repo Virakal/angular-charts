@@ -6,6 +6,8 @@
 
     app = angular.module name, [->]
 
+    app.value name + '.config', {}
+
     app.service 'GoogleLibLoader', ['$q', '$rootScope', ($q, $rootScope) ->
         @pageLoaded = false
         @toLoad = []
