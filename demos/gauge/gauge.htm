@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="gauge">
+<head>
+    <meta charset="utf-8" />
+    <title>Guage - Angular Charts</title>
+</head>
+
+<body ng-controller="GaugeCtrl">
+    <p>
+        <label for="revs">Revs</label>
+        <input name="revs" type="num" ng-model="revs" />
+    </p>
+
+    <p>
+        <label for="mph">Speed</label>
+        <input name="mph" type="num" ng-model="mph" />
+    </p>
+
+    <button ng-click="mph = mph + 10; revs = revs + 500">Go faster!</button>
+
+    <gc-gauge options="{max: 180}" height="200" width="200" title="MPH" value="{{mph}}"></gc-gauge>
+
+    <gc-gauge options="{max: 9000, redFrom: 7000, redTo: 9000}" height="300" width="300" title="Revs" value="{{revs}}"></gc-gauge>
+
+    <p>
+        Data as JSON:
+        <br />
+        MPH: <code ng-bind="mph | json"></code>
+        Revs: <code ng-bind="revs | json"></code>
+    </p>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script src="https://www.google.com/jsapi"></script>
+    <script src="/lib/chart.js"></script>
+    <script src="/demos/gauge/gauge.js"></script>
+</body>
+</html>
