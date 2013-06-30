@@ -3,9 +3,9 @@
 
     app.controller 'PieChartCtrl', ['$scope', ($scope) ->
         $scope.chartData =
-            Cake: 12
-            Pizza: 12
-            Burgers: 8
+            'Cake': 12
+            'Pizza': 12
+            'Burgers': 8
             'Hot Dogs': 10
     ]
 
