@@ -1,7 +1,7 @@
 (() -> (
-    app = angular.module 'demo', ['chart']
+    app = angular.module 'piechart', ['chart']
 
-    app.controller 'DemoCtrl', ['$scope', ($scope) ->
+    app.controller 'PieChartCtrl', ['$scope', ($scope) ->
         $scope.chartData =
             Cake: 12
             Pizza: 12

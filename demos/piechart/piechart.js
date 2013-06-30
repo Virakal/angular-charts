@@ -2,8 +2,8 @@
 (function() {
   var app;
 
-  app = angular.module('demo', ['chart']);
-  app.controller('DemoCtrl', [
+  app = angular.module('piechart', ['chart']);
+  app.controller('PieChartCtrl', [
     '$scope', function($scope) {
       return $scope.chartData = {
         Cake: 12,
