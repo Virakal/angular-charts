@@ -1,18 +1,18 @@
 ((prefix, name, angular, google) ->
     "use strict"
 
-    # Provide some default values for the app name and directive prefix
+    # Provide some default values for the module name and directive prefix
     # just to be safe :)
     prefix ?= 'gc'
     name ?= 'chart'
 
     # Build a module with the given module name
-    app = angular.module name, [->]
+    mod = angular.module name, [->]
 
     # This provides a global config value for the user to override.
-    app.value name + '.config', {}
+    mod.value name + '.config', {}
 
-    app.service 'GoogleLibLoader', ['$q', '$rootScope', ($q, $rootScope) ->
+    mod.service 'GoogleLibLoader', ['$q', '$rootScope', ($q, $rootScope) ->
         # This largely exists to get around the awkward fact that the
         # Google Loader will completely destroy the page if you call it
         # after the DOM has loaded unless you specifify a callback.
@@ -69,7 +69,7 @@
             return deferred.promise
     ]
 
-    app.directive prefix + 'Piechart', [name + '.config', 'GoogleLibLoader', (config, loader) ->
+    mod.directive prefix + 'Piechart', [name + '.config', 'GoogleLibLoader', (config, loader) ->
         toDataTable = (data) ->
             # This builds a Google DataTable object from the given values.
 
