@@ -135,8 +135,6 @@
                 #     chart.draw dataTable, options
 
     ]
-
-    app.run()
 )('gc', 'chart', angular, google)
 # Parameters are passed in here:
 #   Directive prefix
